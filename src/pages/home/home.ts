@@ -1,14 +1,43 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {RACISM_LIST} from '../../mocks/Racism.mock';
 
+
+
+@IonicPage()
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+      RacismList= RACISM_LIST;
+
+
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+
 
   }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
+  }
+
+
+    onRacism(racism)
+    {
+
+      console.log('Racism', racism);
+    this.navCtrl.push('RacismDescriptionPage',{rac:racism})
+    }
+
+
+    onReport()
+    {
+      this.navCtrl.push('Report1Page');
+    }
 
 }
