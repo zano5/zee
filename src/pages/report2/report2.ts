@@ -35,9 +35,12 @@ export class Report2Page {
       gender:"",
       racial:"",
       description:"",
+      province:'',
       location:"",
+      address:"",
       file:"",
       date:""
+
 
     };
 
@@ -53,6 +56,8 @@ export class Report2Page {
 
         description:['',[Validators.required]],
         location:['',[Validators.required]],
+        province:['',[Validators.required]],
+        address:['',[Validators.required]],
         file:this.stringUri,
         date:['', [Validators.required]]
 

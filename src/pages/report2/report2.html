@@ -22,15 +22,39 @@
     <ion-list>
 
       <ion-item>
+        <ion-label>Province</ion-label>
+        <ion-select formControlName="province">
+          <ion-option value="western cape">Western Cape</ion-option>
+          <ion-option value="northern cape">Northern Cape</ion-option>
+          <ion-option value="gauteng">Gauteng</ion-option>
+          <ion-option value="mpumalanga">Mpumalanga</ion-option>
+            <ion-option value="north west">North West</ion-option>
+              <ion-option value="free state">Free State</ion-option>
+                <ion-option value="east cape">East Cape</ion-option>
+                  <ion-option value="limpopo">Limpopo</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
       <ion-label floating>Search your city</ion-label>
       <ion-input #myInput  formControlName="location" id="googlePlaces" ></ion-input>
   </ion-item>
-      <ion-item>
 
-        <ion-item  *ngIf="report.controls.location.invalid && report.controls.location.dirty" no-lines>
-          <p>Please provide location</p>
-        </ion-item>
 
+    <ion-item  *ngIf="report.controls.location.invalid && report.controls.location.dirty" no-lines>
+      <p>Please provide location</p>
+    </ion-item>
+
+  <ion-item>
+  <ion-label floating >Base Address</ion-label>
+  <ion-input type="text" formControlName="address"></ion-input>
+  </ion-item>
+
+  <ion-item  *ngIf="report.controls.address.invalid && report.controls.address.dirty" no-lines>
+    <p>Please provide base address</p>
+  </ion-item>
+
+        <ion-item>
         <ion-label floating>Date of Incident</ion-label>
         <ion-datetime  formControlName="date" displayFormat="MM DD YYYY" pickerFormat="MM DD YYYY" min="2018" max="2018" ></ion-datetime>
       </ion-item>
@@ -38,8 +62,6 @@
       <ion-item  *ngIf="report.controls.date.invalid && report.controls.date.dirty" no-lines>
         <p>Please provide date</p>
       </ion-item>
-
-
 
   <ion-item>
   <ion-label floating >Describe Incident</ion-label>
@@ -49,6 +71,8 @@
   <ion-item  *ngIf="report.controls.description.invalid && report.controls.description.dirty" no-lines>
     <p>Please provide description</p>
   </ion-item>
+
+
 
 
 
